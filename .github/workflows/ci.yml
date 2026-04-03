@@ -20,19 +20,10 @@ jobs:
         include:
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-latest
-            cross: false
-          - target: aarch64-unknown-linux-gnu
-            os: ubuntu-latest
-            cross: true
           - target: x86_64-pc-windows-msvc
             os: windows-latest
-            cross: false
-          - target: x86_64-apple-darwin
-            os: macos-13
-            cross: false
           - target: aarch64-apple-darwin
-            os: macos-14
-            cross: false
+            os: macos-latest
 
     steps:
       - name: Checkout
@@ -41,7 +32,6 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.target }}
           components: clippy
 
       - name: Cache cargo registry and target
@@ -51,43 +41,24 @@ jobs:
             ~/.cargo/registry
             ~/.cargo/git
             target
-          key: ${{ runner.os }}-cargo-${{ matrix.target }}-${{ hashFiles('**/Cargo.lock') }}
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
           restore-keys: |
-            ${{ runner.os }}-cargo-${{ matrix.target }}-
-
-      - name: Install cross
-        if: matrix.cross
-        run: cargo install cross --git https://github.com/cross-rs/cross
+            ${{ runner.os }}-cargo-
 
       - name: Run tests
-        if: "!matrix.cross"
-        run: cargo test --all --target ${{ matrix.target }}
-
-      - name: Run tests (cross)
-        if: matrix.cross
-        run: cross test --all --target ${{ matrix.target }}
+        run: cargo test --all
 
       - name: Run clippy
-        if: "!matrix.cross"
-        run: cargo clippy --all-targets --target ${{ matrix.target }} -- -D warnings
-
-      - name: Run clippy (cross)
-        if: matrix.cross
-        run: cross clippy --all-targets --target ${{ matrix.target }} -- -D warnings
+        run: cargo clippy --all-targets -- -D warnings
 
       - name: Build release
-        if: "!matrix.cross"
-        run: cargo build --release --target ${{ matrix.target }}
-
-      - name: Build release (cross)
-        if: matrix.cross
-        run: cross build --release --target ${{ matrix.target }}
+        run: cargo build --release
 
       - name: Upload release artifact
         uses: actions/upload-artifact@v4
         with:
           name: parser-chunker-${{ matrix.target }}
           path: |
-            target/${{ matrix.target }}/release/parser-chunker
-            target/${{ matrix.target }}/release/parser-chunker.exe
+            target/release/parser-chunker
+            target/release/parser-chunker.exe
           if-no-files-found: ignore
