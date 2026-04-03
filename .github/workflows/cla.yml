@@ -25,11 +25,12 @@ jobs:
           PERSONAL_ACCESS_TOKEN: ${{ secrets.CLA_TOKEN }}
         with:
           path-to-document: 'https://github.com/alessandrobenigni/Lightining-Parser-Chunker-Rust-WASM-CLI/blob/main/CLA.md'
+          path-to-signatures: 'signatures/cla.json'
           branch: 'cla-signatures'
           allowlist: alessandrobenigni,dependabot[bot]
           remote-organization-name: false
           remote-repository-name: false
-          create-file-commit-message: 'chore: create CLA signature file'
+          create-file-commit-message: 'chore: update CLA signatures'
           signed-commit-message: '$contributorName has signed the CLA in $pullRequestNo'
           custom-notsigned-prcomment: |
             Thank you for your contribution! Before we can merge this PR, you need to sign the [Contributor License Agreement](https://github.com/alessandrobenigni/Lightining-Parser-Chunker-Rust-WASM-CLI/blob/main/CLA.md).
