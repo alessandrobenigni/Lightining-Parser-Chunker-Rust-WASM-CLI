@@ -427,3 +427,4 @@ For proprietary use without AGPL obligations — no source disclosure, no copyle
 <p align="center">
   Built with Rust. Made for enterprises that refuse to compromise.
 </p>
+
