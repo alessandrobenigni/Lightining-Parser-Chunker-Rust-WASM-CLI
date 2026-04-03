@@ -2,15 +2,25 @@
 
 Thank you for your interest in contributing. Parser Chunker is a performance-critical project — every change must maintain or improve throughput, correctness, and binary size.
 
+## Contributor License Agreement (CLA)
+
+Before your first contribution can be merged, you must agree to our [Contributor License Agreement](CLA.md). This is required because Lightning Parser Chunker uses a dual-license model (AGPL-3.0 + commercial), and we need the legal right to offer commercial licenses.
+
+**How to sign:** Add `Signed-off-by` to your commits using `git commit -s`. This indicates you've read and agreed to the CLA.
+
+All commits must include this line — the DCO bot will block PRs without it.
+
 ## Getting Started
 
-1. Fork the repository
-2. Clone your fork: `git clone https://github.com/YOUR-USERNAME/Lightining-Parser-Chunker-Rust-WASM-CLI.git`
-3. Create a branch: `git checkout -b feature/your-feature`
-4. Make changes and add tests
-5. Run the full test suite: `cargo test --all`
-6. Run clippy: `cargo clippy --all-targets`
-7. Submit a pull request
+1. Read the [CLA](CLA.md)
+2. Fork the repository
+3. Clone your fork: `git clone https://github.com/YOUR-USERNAME/Lightining-Parser-Chunker-Rust-WASM-CLI.git`
+4. Create a branch: `git checkout -b feature/your-feature`
+5. Make changes and add tests
+6. Run the full test suite: `cargo test --all`
+7. Run clippy: `cargo clippy --all-targets`
+8. Commit with sign-off: `git commit -s -m "your message"`
+9. Submit a pull request
 
 ## Code Standards
 
@@ -79,4 +89,4 @@ bash run_all.sh
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the AGPL-3.0.
+By contributing, you agree to the terms of the [Contributor License Agreement](CLA.md). Your contributions will be licensed under the AGPL-3.0, and you grant Alessandro Benigni the right to sublicense under commercial terms as described in the CLA.
