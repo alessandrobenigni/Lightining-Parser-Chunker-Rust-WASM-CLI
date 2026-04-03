@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 350" width="800" height="350" font-family="Inter, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f0f0f5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="350" rx="8" fill="url(#bg2)" stroke="#e2e2e8" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" fill="#18181b">Parser Chunker Speedup vs Competitors</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="48" text-anchor="middle" font-size="11" fill="#71717a">Higher is better. Measured as Parser Chunker throughput / competitor throughput.</text>
+
+  <!-- Chart area: x=160..760, y=65..310 -->
+  <!-- Scale: 600px for 630x max => ~0.95px per 1x -->
+
+  <!-- vs Unstructured section -->
+  <text x="80" y="82" text-anchor="end" font-size="10" font-weight="600" fill="#ef4444">vs Unstructured</text>
+
+  <!-- Med TXT: 314x -->
+  <text x="155" y="82" text-anchor="end" font-size="9" fill="#71717a">Med TXT</text>
+  <rect x="160" y="72" width="299" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="464" y="83" font-size="9" font-weight="700" fill="#6366f1">314x</text>
+
+  <!-- Med HTML: 173x -->
+  <text x="155" y="102" text-anchor="end" font-size="9" fill="#71717a">Med HTML</text>
+  <rect x="160" y="92" width="165" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="330" y="103" font-size="9" font-weight="700" fill="#6366f1">173x</text>
+
+  <!-- Large TXT: 629x -->
+  <text x="155" y="122" text-anchor="end" font-size="9" fill="#71717a">Large TXT</text>
+  <rect x="160" y="112" width="570" height="14" rx="3" fill="#6366f1" opacity="0.9"/>
+  <text x="735" y="123" font-size="9" font-weight="700" fill="#6366f1">629x</text>
+
+  <!-- Large HTML: 295x -->
+  <text x="155" y="142" text-anchor="end" font-size="9" fill="#71717a">Large HTML</text>
+  <rect x="160" y="132" width="281" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="446" y="143" font-size="9" font-weight="700" fill="#6366f1">295x</text>
+
+  <!-- Separator -->
+  <line x1="80" y1="158" x2="760" y2="158" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <!-- vs Docling section -->
+  <text x="80" y="180" text-anchor="end" font-size="10" font-weight="600" fill="#f59e0b">vs Docling</text>
+
+  <!-- Med HTML: 97x -->
+  <text x="155" y="180" text-anchor="end" font-size="9" fill="#71717a">Med HTML</text>
+  <rect x="160" y="170" width="92" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="257" y="181" font-size="9" font-weight="700" fill="#6366f1">97x</text>
+
+  <!-- Large HTML: 159x -->
+  <text x="155" y="200" text-anchor="end" font-size="9" fill="#71717a">Large HTML</text>
+  <rect x="160" y="190" width="152" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="317" y="201" font-size="9" font-weight="700" fill="#6366f1">159x</text>
+
+  <!-- Separator -->
+  <line x1="80" y1="216" x2="760" y2="216" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <!-- vs LangChain section -->
+  <text x="80" y="238" text-anchor="end" font-size="10" font-weight="600" fill="#10b981">vs LangChain</text>
+
+  <!-- Med TXT: 3.0x -->
+  <text x="155" y="238" text-anchor="end" font-size="9" fill="#71717a">Med TXT</text>
+  <rect x="160" y="228" width="29" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="194" y="239" font-size="9" font-weight="700" fill="#6366f1">3.0x</text>
+
+  <!-- Med HTML: 1.6x -->
+  <text x="155" y="258" text-anchor="end" font-size="9" fill="#71717a">Med HTML</text>
+  <rect x="160" y="248" width="15" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="180" y="259" font-size="9" font-weight="700" fill="#6366f1">1.6x</text>
+
+  <!-- Large TXT: 5.6x -->
+  <text x="155" y="278" text-anchor="end" font-size="9" fill="#71717a">Large TXT</text>
+  <rect x="160" y="268" width="53" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="218" y="279" font-size="9" font-weight="700" fill="#6366f1">5.6x</text>
+
+  <!-- Large HTML: 4.4x -->
+  <text x="155" y="298" text-anchor="end" font-size="9" fill="#71717a">Large HTML</text>
+  <rect x="160" y="288" width="42" height="14" rx="3" fill="#6366f1" opacity="0.85"/>
+  <text x="207" y="299" font-size="9" font-weight="700" fill="#6366f1">4.4x</text>
+
+  <!-- Footer -->
+  <text x="400" y="338" text-anchor="middle" font-size="9" fill="#a1a1aa">Speedup = Parser Chunker files/sec / competitor files/sec. Docling only supports HTML natively.</text>
+</svg>

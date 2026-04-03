@@ -1,0 +1,29 @@
+/target
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug output
+parser-chunker-debug/
+
+# ONNX model files (downloaded via scripts/download_models.py)
+/models/*.onnx
+/models/*.txt
+
+# Generated benchmark data (reproducible via scripts)
+/benchmark-corpus/
+/benchmark-results/
+/bench-output/
+/test-output/
+
+# Nova internal (development pipeline artifacts)
+.nova/
+.claude/
+CLAUDE.md

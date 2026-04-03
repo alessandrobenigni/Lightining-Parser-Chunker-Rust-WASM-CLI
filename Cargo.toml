@@ -1,0 +1,64 @@
+[package]
+name = "lightning-parser-chunker"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "The fastest document parser and chunker for RAG pipelines. 314x faster than Unstructured. Air-gapped, zero dependencies, single binary. Rust."
+license = "AGPL-3.0-or-later"
+repository = "https://github.com/alessandrobenigni/Lightining-Parser-Chunker-Rust-WASM-CLI"
+homepage = "https://alessandrobenigni.com"
+keywords = ["parser", "chunker", "rag", "document", "nlp"]
+categories = ["command-line-utilities", "text-processing"]
+
+[lib]
+name = "parser_chunker"
+path = "src/lib.rs"
+
+[[bin]]
+name = "parser-chunker"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+arrow = "58"
+parquet = "58"
+bpe = "0.2"
+calamine = "0.34"
+docx-rs = "0.4"
+quick-xml = "0.37"
+zip = "2"
+html5ever = "0.39"
+scraper = "0.22"
+mail-parser = "0.11"
+csv = "1"
+cfb = "0.10"
+encoding_rs = "0.8"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+pdf-extract = "0.10"
+pdfium-render = { version = "0.8", default-features = true }
+pdfium-auto = "0.3"
+image = "0.25"
+
+# TODO: mupdf — add when C FFI build is configured
+ort = { version = "2.0.0-rc.12", features = ["download-binaries"] }
+ndarray = "0.16"
+bpe-openai = "0.3"
+toml = "0.8"
+memmap2 = "0.9"
+
+[dev-dependencies]
+criterion = { version = "0.5", features = ["html_reports"] }
+insta = { version = "1", features = ["yaml"] }
+assert_cmd = "2"
+predicates = "3"
+tempfile = "3"
+
+[[bench]]
+name = "parsing"
+harness = false
